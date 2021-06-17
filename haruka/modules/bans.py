@@ -65,14 +65,14 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
     try:
         chat.kick_member(user_id)
         #bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
-        message.reply_text(tld(chat.id, "Banned!"))
+        message.reply_text(tld(chat.id, "bruh he got banned fr epic"))
         return log
 
     except BadRequest as excp:
         if excp.message == "Reply message not found":
             # Do not reply
             #bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
-            message.reply_text(tld(chat.id, "Banned!"), quote=False)
+            message.reply_text(tld(chat.id, "As corny Miss Rose would say - another one bites the dust"), quote=False)
             return log
         else:
             LOGGER.warning(update)
@@ -109,7 +109,7 @@ def temp_ban(bot: Bot, update: Update, args: List[str]) -> str:
             raise
 
     if is_user_ban_protected(chat, user_id, member):
-        message.reply_text(tld(chat.id, "This user is ban protected, meaning that you cannot ban this user!"))
+        message.reply_text(tld(chat.id, "This user is ban protected man"))
         return ""
 
     if user_id == bot.id:
